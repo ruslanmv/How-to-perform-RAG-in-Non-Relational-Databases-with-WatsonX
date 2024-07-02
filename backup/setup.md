@@ -52,21 +52,28 @@ You should see `mongo-server` listed.
 1. Pull the Milvus Docker image:
 
 ```bash
-docker pull milvusdb/milvus:latest
+$ wget https://github.com/milvus-io/milvus/releases/download/v2.4.5/milvus-standalone-docker-compose.yml -O docker-compose.yml
+$ sudo docker compose up -d
 ```
 
 2. Run a Milvus container, exposing the default port (19530):
 
 ```bash
-docker run -d --name milvus -p 19530:19530 milvusdb/milvus:latest
-```
 
+```
+After starting up Milvus,
+
+Containers named milvus-standalone, milvus-minio, and milvus-etcd are up.
+The milvus-etcd container does not expose any ports to the host and maps its data to volumes/etcd in the current folder.
+The milvus-minio container serves ports 9090 and 9091 locally with the default authentication credentials and maps its data to volumes/minio in the current folder.
+The milvus-standalone container serves ports 19530 locally with the default settings and maps its data to volumes/milvus in the current folder.
+You can check if the containers are up and running using the following command:
 3. Verify that the container is running:
 ```bash
 docker ps
 ```
 You should see `milvus` listed.
-
+![](assets/2024-07-03-00-18-31.png)
 
 **Step 3: Prepare Your Data**
 
