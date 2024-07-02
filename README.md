@@ -7,7 +7,7 @@ Hello everyone, today we are going to build a RAG system in WatsonX with a Mongo
 
 
 Install and start Docker.
-To learn more, see the [Docker documentation].
+To learn more, see the [Docker documentation](https://docs.docker.com/desktop/install/mac-install/).
 
 
 ## Mongo DB server
@@ -17,9 +17,13 @@ In this tutorial we are going to use Docker to install our server.
 To use MongoDB with Docker, follow these easy steps:
 
 
-Step 1:  Pull the MongoDB container.
+Step 1:  Pull down the mongodb/mongodb-atlas-local Docker image.
 ```
 docker pull mongo:latest
+docker pull mongo/atlas:latest
+docker pull mongodb/mongodb-atlas-local:latest
+docker pull mongodb/atlas:latest
+
 ```
 
 
@@ -27,6 +31,10 @@ Step 2: Run the container.
 
 ```
 docker run -d -p 27017:27017 --name=mongo-server mongo:latest
+docker run -p 27017:27017 --name=mongo-server mongodb/mongodb-atlas-local:latest
+
+docker run -d -p 27017:27017 --name=mongo-server mongodb/atlas:latest
+
 ```
 
 
@@ -38,6 +46,8 @@ Step 3: Verify the state.
 docker ps
 ```
 ![](assets/2024-07-01-14-57-10.png)
+![](assets/2024-07-02-22-42-57.png)
+![](assets/2024-07-02-23-09-43.png)
 
 As you can see the container is running successfully.
 
