@@ -1,4 +1,3 @@
-Absolutely! Here's a blog post explaining the process of setting up a movie recommendation system using Docker, Milvus, MongoDB, and Watsonx.ai, along with the Python code provided:
 
 ## Building a Movie Recommendation Engine with Docker, Milvus, MongoDB, and Watsonx.ai
 
